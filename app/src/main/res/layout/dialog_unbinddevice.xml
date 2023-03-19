@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/iv_unbind_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@mipmap/login_close_bg_nor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="@string/deivce_unbind"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="@string/deivce_unbind_hint"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_device_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/defaultDevice"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_unbind_submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="#000000"
+                android:padding="5dp"
+                android:text="@string/unbindDevice"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+</LinearLayout>

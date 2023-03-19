@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+    <!--    background video-->
+    <com.seu.smartfarm.modules.userapi.TLoginVideo
+        android:id="@+id/login_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--    login or register view-->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--        app title-->
+        <ImageView
+            android:layout_width="330dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:src="@drawable/logo1" />
+        <!-- login and register view -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <!-- login view -->
+            <LinearLayout
+                android:id="@+id/frameLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/login_uid" />
+
+                    <EditText
+                        android:id="@+id/editLoginUid"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/uid_hint_1"
+                        android:hint="@string/uid_hint_1"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/login_pwd" />
+
+                    <EditText
+                        android:id="@+id/editLoginPwd"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/pwd_hint_1"
+                        android:hint="@string/pwd_hint_1"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tvLogin2Register"
+                        style="@style/TextViewStyle"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/btn_go_register" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        style="@style/ButtonStyle"
+                        android:layout_marginStart="90dp"
+                        android:layout_marginEnd="90dp"
+                        android:text="@string/btn_login" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- register view -->
+            <LinearLayout
+                android:id="@+id/frameRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/register_uid" />
+
+                    <EditText
+                        android:id="@+id/editRegisterUid"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/uid_hint_1"
+                        android:hint="@string/uid_hint_1"
+                        android:inputType="textPersonName" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/register_pwd0" />
+
+                    <EditText
+                        android:id="@+id/editRegisterPwd0"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/pwd_hint_1"
+                        android:hint="@string/pwd_hint_1"
+                        android:inputType="textPassword" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/register_pwd1" />
+
+                    <EditText
+                        android:id="@+id/editRegisterPwd1"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/pwd_hint_2"
+                        android:hint="@string/pwd_hint_2"
+                        android:inputType="textPassword" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:text="@string/register_tel" />
+
+                    <EditText
+                        android:id="@+id/editRegisterTel"
+                        style="@style/EditTextStyle"
+                        android:autofillHints="@string/tel_hints"
+                        android:hint="@string/tel_hints"
+                        android:inputType="phone"
+                        android:maxLength="11" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextViewStyle"
+                        android:layout_weight="2"
+                        android:text="@string/register_check" />
+
+                    <EditText
+                        android:id="@+id/editRegisterCheck"
+                        style="@style/EditTextStyle"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1.5"
+                        android:autofillHints="@string/check_hints"
+                        android:hint="@string/check_hints"
+                        android:inputType="number"
+                        android:maxLength="6" />
+
+                    <TextView
+                        android:id="@+id/tvGetCode"
+                        style="@style/TextViewStyle"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1.5"
+                        android:gravity="center"
+                        android:text="@string/btn_Get_Code"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_granted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="40dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="40dp"
+                        android:text="@string/grantedText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/btnRegister"
+                        style="@style/ButtonStyle"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/btn_register" />
+
+                    <Button
+                        android:id="@+id/btnRegister2Login"
+                        style="@style/ButtonStyle"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="40dp"
+                        android:text="@string/btn_go_login" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--        blank place holder-->
+        <LinearLayout
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:orientation="vertical">
+
+        </LinearLayout>
+        <!--        bottom software right information-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:text="@string/login_copyright"
+                android:textColor="@color/colorText" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

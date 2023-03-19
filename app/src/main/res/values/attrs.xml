@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ItemInfo_show_bottom_line">444</declare-styleable>
+    <declare-styleable name="InfoView">
+        <attr name="left_icon" format="integer" />
+        <attr name="show_left_icon" format="boolean" />
+        <attr name="left_text" format="string" />
+        <attr name="right_text" format="string" />
+        <attr name="show_right_arrow" format="boolean" />
+        <attr name="show_bottom_line" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="StatusView">
+        <attr name="status_title" format="string" />
+        <attr name="value_suffix" format="string" />
+        <attr name="show_value_prefix" format="boolean" />
+        <attr name="show_value_suffix" format="boolean" />
+        <attr name="value_clickable" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ControlWithBarView">
+        <attr name="control_bar_title" format="string" />
+        <attr name="enable_bar" format="boolean" />
+        <attr name="bar_minvalue" format="integer"/>
+        <attr name="bar_maxvalue" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="ControlWithBtnView">
+        <attr name="control_btn_title" format="string" />
+        <attr name="enable_btn" format="boolean" />
+        <attr name="btn_text" format="string"/>
+    </declare-styleable>
+</resources>

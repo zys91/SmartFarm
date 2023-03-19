@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_panel">
+
+    <fragment
+        android:id="@+id/navigation_videolist"
+        android:name="com.seu.smartfarm.fragment.videolist.VideoList"
+        android:label="@string/title_videolist"
+        tools:layout="@layout/fragment_videolist" />
+
+    <fragment
+        android:id="@+id/navigation_panel"
+        android:name="com.seu.smartfarm.fragment.panel.ControlPanel"
+        android:label="@string/title_panel"
+        tools:layout="@layout/fragment_panel" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.seu.smartfarm.fragment.account.Account"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account" />
+</navigation>

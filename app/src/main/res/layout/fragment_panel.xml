@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <!-- bind and controlPanel view -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <!-- bind view-->
+                    <LinearLayout
+                        android:id="@+id/frameBind"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_scan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:gravity="center"
+                            android:text="@string/scan_title"
+                            android:textSize="25sp" />
+
+                        <ImageView
+                            android:id="@+id/left_icon"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/ic_scan"
+                            android:contentDescription="@string/todo" />
+
+                        <Button
+                            android:id="@+id/btn_scan"
+                            style="@style/ButtonStyle"
+                            android:layout_marginStart="120dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="120dp"
+                            android:text="@string/btn_scan" />
+
+                    </LinearLayout>
+                    <!-- controlPanel view -->
+                    <LinearLayout
+                        android:id="@+id/frameControlPanel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="设备:"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/device_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Farm_xxxxxx"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/device_online_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="未知"
+                                android:textColor="@color/colorWarning"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="设备状况:"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_temp"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="箱内温度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="°C" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_humi"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="箱内湿度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="%" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_lux"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="光照强度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="Lux" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_weight"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="植物称重"
+                                    app:value_clickable="true"
+                                    app:value_suffix="g" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_soilTemp"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="土壤温度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="°C" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_soilHumi"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="土壤湿度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="%" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_soilEC"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="土壤EC"
+                                    app:value_clickable="true"
+                                    app:value_suffix="mS/cm" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_soilPH"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="false"
+                                    app:status_title="土壤PH"
+                                    app:value_clickable="true"
+                                    app:value_suffix="" />
+
+                                <com.seu.smartfarm.modules.view.StatusView
+                                    android:id="@+id/device_waterHeight"
+                                    style="@style/DeviceStatusStyle"
+                                    app:show_value_prefix="false"
+                                    app:show_value_suffix="true"
+                                    app:status_title="水位深度"
+                                    app:value_clickable="true"
+                                    app:value_suffix="mm" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="设备控制:"
+                                android:textSize="25sp" />
+
+                            <ToggleButton
+                                android:id="@+id/btn_controlMode"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginEnd="30dp"
+                                android:background="@drawable/bg_switch"
+                                android:checked="false"
+                                android:textAlignment="textEnd"
+                                android:textOff="手动  "
+                                android:textOn="  自动"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/manual_operate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.seu.smartfarm.modules.view.ControlWithBarView
+                                android:id="@+id/device_light"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:control_bar_title="灯光控制"
+                                app:enable_bar="true" />
+
+                            <com.seu.smartfarm.modules.view.ControlWithBarView
+                                android:id="@+id/device_fan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:bar_minvalue="85"
+                                app:control_bar_title="风扇控制"
+                                app:enable_bar="true" />
+
+                            <com.seu.smartfarm.modules.view.ControlWithBarView
+                                android:id="@+id/device_waterPump"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:control_bar_title="水泵控制"
+                                app:enable_bar="false" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/automatic_operate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:padding="2sp"
+                            android:visibility="gone">
+
+                            <com.seu.smartfarm.modules.view.ControlWithBtnView
+                                android:id="@+id/device_nightMode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:btn_text="时间设置"
+                                app:control_btn_title="夜间模式"
+                                app:enable_btn="true" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="3"
+                                android:text="实时画面:"
+                                android:textSize="25sp" />
+
+                            <Button
+                                android:id="@+id/btn_live_get"
+                                style="@style/ButtonStyle"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/ic_refresh"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/device_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/bg_camera" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
